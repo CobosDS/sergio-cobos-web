@@ -42,7 +42,7 @@ export default function Contact() {
         </h2>
         <div className="w-12 h-1 bg-blue-500 mb-12 rounded" />
 
-        <div className="grid md:grid-cols-2 gap-12 items-start">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
 
           {/* Left: text */}
           <div className="space-y-4">

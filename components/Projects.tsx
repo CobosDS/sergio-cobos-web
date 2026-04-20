@@ -123,7 +123,7 @@ function DetailPanel({ p, panelKey }: { p: Project; panelKey: number }) {
     <div key={panelKey} className="slide-in flex flex-col gap-5">
       <div>
         <div className="flex items-start justify-between gap-3 mb-1">
-          <h3 className="text-white font-bold text-xl leading-tight">{p.name}</h3>
+          <h3 className="text-white font-bold text-lg md:text-xl leading-tight">{p.name}</h3>
           {p.pubUrl ? (
             <a
               href={p.pubUrl}

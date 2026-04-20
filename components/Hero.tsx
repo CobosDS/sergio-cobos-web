@@ -73,14 +73,14 @@ export default function Hero() {
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,transparent_40%,#0a0f1e_100%)]" />
 
       {/* Blue glow orbs */}
-      <div className="absolute top-1/4 left-1/4 w-72 h-72 rounded-full bg-blue-600/15 blur-3xl -z-10" />
-      <div className="absolute bottom-1/4 right-1/4 w-56 h-56 rounded-full bg-blue-500/10 blur-3xl -z-10" />
+      <div className="absolute top-1/4 left-1/4 w-48 h-48 md:w-72 md:h-72 rounded-full bg-blue-600/15 blur-3xl -z-10" />
+      <div className="absolute bottom-1/4 right-1/4 w-40 h-40 md:w-56 md:h-56 rounded-full bg-blue-500/10 blur-3xl -z-10" />
 
-      <div className="max-w-5xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center py-24">
+      <div className="max-w-5xl mx-auto w-full grid md:grid-cols-2 gap-8 md:gap-12 items-center py-24">
 
         {/* Left: text */}
         <div className="animate-fade-in-up">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 leading-tight">
             Sergio<br />Cobos
           </h1>
           <div className="h-8 flex items-center mb-6">

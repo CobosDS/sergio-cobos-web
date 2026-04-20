@@ -14,7 +14,7 @@ export default function About() {
         </h2>
         <div className="w-12 h-1 bg-blue-500 mb-12 rounded" />
 
-        <div className="grid md:grid-cols-2 gap-12 items-start">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
           <div className="space-y-4 text-slate-400 leading-relaxed text-sm">
             <p>
               I am a <span className="text-white font-medium">Research Engineer at the Universitat Oberta de Catalunya</span>, working within the SOM Research Lab on AI, large language models and empirical software engineering.

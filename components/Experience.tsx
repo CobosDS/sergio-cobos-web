@@ -79,7 +79,7 @@ const experiences: Experience[] = [
 
 const CHAR_DELAY = 38;
 const LINE_DELAY = 120;
-const PROMPT = "sergio@portfolio:~$";
+const PROMPT = "sergio@uoc:~$";
 
 function useTypewriter(
   selected: number,
@@ -155,7 +155,7 @@ function TerminalOutput({ exp, visible }: { exp: Experience; visible: boolean })
         return (
           <div
             key={i}
-            className={`font-mono text-sm leading-6 whitespace-pre ${
+            className={`font-mono text-sm leading-6 whitespace-pre-wrap break-words ${
               isTask
                 ? "text-slate-300"
                 : isTag
@@ -225,7 +225,7 @@ export default function Experience() {
             </div>
 
             {/* Terminal body */}
-            <div className="px-5 py-5 min-h-[420px] font-mono text-sm">
+            <div className="px-5 py-5 min-h-[300px] md:min-h-[420px] font-mono text-sm overflow-x-hidden">
 
               {/* Previous commands history */}
               {experiences.slice(0, selected).map((exp, i) => (
