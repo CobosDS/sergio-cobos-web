@@ -17,13 +17,13 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
           <div className="space-y-4 text-slate-400 leading-relaxed text-sm">
             <p>
-              I am a <span className="text-white font-medium">Research Engineer at the Universitat Oberta de Catalunya</span>, working within the SOM Research Lab on AI, large language models and empirical software engineering.
+              I am a <span className="text-white font-medium">Research Engineer</span> working on AI, large language models and empirical software engineering.
             </p>
             <p>
               My work is split between building real tools and running studies that produce published results. On the engineering side I build LLM-powered classifiers, automated pipelines and recommender systems. On the research side I design empirical studies, collect large-scale datasets and apply statistical methods to draw conclusions that hold up to peer review.
             </p>
             <p>
-              Before research I spent two years as a <span className="text-white font-medium">Data Scientist in industry</span>, working on segmentation models, ETL pipelines and data infrastructure. Before that I ran my own academy for over fifteen years, teaching Mathematics and Physics and managing a small team.
+              Before research I spent two years as a <span className="text-white font-medium">Data Scientist in industry</span>, working on segmentation models, ETL pipelines and data infrastructure. Before that I ran my own academy for several years, teaching Mathematics and Physics and managing a small team.
             </p>
             <p>
               I care about building AI systems that are not just accurate but <span className="text-blue-400">interpretable, measurable and responsible</span>.

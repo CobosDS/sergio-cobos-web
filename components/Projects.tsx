@@ -24,7 +24,7 @@ const projects: Project[] = [
       "Directly addresses a real production risk that teams face when updating or replacing AI components to reduce costs",
     ],
     tech: ["Python", "NLP", "ML", "LLMs", "Statistics", "Data Analysis", "Statistical Testing", "Cohen's κ", "MLOps"],
-    publication: "ESEM 2026",
+    publication: "Research project",
   },
   {
     name: "GenAI Recommender",
@@ -37,7 +37,7 @@ const projects: Project[] = [
       "Targets software developers without deep AI expertise who need to integrate models into production products",
     ],
     tech: ["Python", "NLP", "ML", "LLMs", "Statistics", "Data Analysis", "Software Product Lines", "Hugging Face"],
-    publication: "CAIN 2026",
+    publication: "Submitted work",
   },
   {
     name: "Decidim Study",

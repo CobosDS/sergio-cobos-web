@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 type Experience = {
   cmd: string;
@@ -31,7 +31,7 @@ const experiences: Experience[] = [
       "Built OSS moderation bots using Mixtral and LLaMA via Ollama and LangChain",
       "Designed ethical classifiers for GitHub with GPT-4o Mini and prompt engineering",
       "Created EthOSS, ethical quality tool for open-source projects (JISBD 2025)",
-      "Built a GenAI model recommender for developers (CAIN 2026)",
+      "Built a GenAI model recommender for developers",
       "Analyzed participation networks: GitHub, MetaDecidim, Decidim Barcelona (JSS)",
       "Large-scale Hugging Face metadata analysis on documentation quality patterns",
     ],
@@ -79,7 +79,7 @@ const experiences: Experience[] = [
 
 const CHAR_DELAY = 38;
 const LINE_DELAY = 120;
-const PROMPT = "sergio@uoc:~$";
+const PROMPT = "sergio@ai:~$";
 
 function useTypewriter(
   selected: number,
@@ -90,27 +90,36 @@ function useTypewriter(
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    setTyped("");
-    setDone(false);
     const target = experiences[selected].cmd;
     let i = 0;
+    const timers: ReturnType<typeof setTimeout>[] = [];
+
+    timers.push(setTimeout(() => {
+      setTyped("");
+      setDone(false);
+    }, 0));
 
     const type = () => {
       i++;
       setTyped(target.slice(0, i));
       if (i < target.length) {
-        timerRef.current = setTimeout(type, CHAR_DELAY);
+        const timer = setTimeout(type, CHAR_DELAY);
+        timerRef.current = timer;
+        timers.push(timer);
       } else {
-        timerRef.current = setTimeout(() => {
+        const timer = setTimeout(() => {
           setDone(true);
           onDone();
         }, 300);
+        timerRef.current = timer;
+        timers.push(timer);
       }
     };
 
-    timerRef.current = setTimeout(type, 200);
-    return () => { if (timerRef.current) clearTimeout(timerRef.current); };
-  }, [selected]);
+    const startTimer = setTimeout(type, 200);
+    timers.push(startTimer);
+    return () => timers.forEach(clearTimeout);
+  }, [selected, onDone]);
 
   return [typed, done];
 }
@@ -118,7 +127,7 @@ function useTypewriter(
 function TerminalOutput({ exp, visible }: { exp: Experience; visible: boolean }) {
   const [revealed, setRevealed] = useState(0);
 
-  const allLines = [
+  const allLines = useMemo(() => [
     "",
     ...exp.lines.map((l) => `  ${l.label.padEnd(10)} ${l.value}`),
     "",
@@ -127,20 +136,25 @@ function TerminalOutput({ exp, visible }: { exp: Experience; visible: boolean })
     "",
     `  tags: ${exp.tags.join(" · ")}`,
     "",
-  ];
+  ], [exp]);
 
   useEffect(() => {
-    if (!visible) { setRevealed(0); return; }
-    setRevealed(0);
+    if (!visible) {
+      const reset = setTimeout(() => setRevealed(0), 0);
+      return () => clearTimeout(reset);
+    }
+    const reset = setTimeout(() => setRevealed(0), 0);
     let i = 0;
+    const timers: ReturnType<typeof setTimeout>[] = [];
     const next = () => {
       i++;
       setRevealed(i);
-      if (i < allLines.length) setTimeout(next, LINE_DELAY);
+      if (i < allLines.length) timers.push(setTimeout(next, LINE_DELAY));
     };
     const t = setTimeout(next, 80);
-    return () => clearTimeout(t);
-  }, [visible, exp.cmd]);
+    timers.push(t);
+    return () => { clearTimeout(reset); timers.forEach(clearTimeout); };
+  }, [visible, exp.cmd, allLines.length]);
 
   if (!visible) return null;
 
@@ -178,7 +192,8 @@ function TerminalOutput({ exp, visible }: { exp: Experience; visible: boolean })
 export default function Experience() {
   const [selected, setSelected] = useState(0);
   const [outputVisible, setOutputVisible] = useState(false);
-  const [typed, cmdDone] = useTypewriter(selected, () => setOutputVisible(true));
+  const showOutput = useCallback(() => setOutputVisible(true), []);
+  const [typed, cmdDone] = useTypewriter(selected, showOutput);
 
   const handleSelect = (i: number) => {
     if (i === selected) return;

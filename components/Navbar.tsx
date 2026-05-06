@@ -82,13 +82,15 @@ export default function Navbar() {
             href="#contact"
             className="px-4 py-1.5 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-all font-medium"
           >
-            Hire me
+            Collaborate
           </a>
         </div>
 
         {/* Mobile burger */}
         <button
           onClick={() => setOpen(!open)}
+          aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={open}
           className="md:hidden p-2 text-slate-400 hover:text-white transition-colors"
         >
           {open ? "✕" : "☰"}
@@ -113,7 +115,7 @@ export default function Navbar() {
             onClick={() => setOpen(false)}
             className="mt-3 px-4 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-sm font-medium text-center transition-all"
           >
-            Hire me
+            Collaborate
           </a>
         </div>
       )}

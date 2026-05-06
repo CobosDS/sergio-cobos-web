@@ -47,7 +47,7 @@ export default function Contact() {
           {/* Left: text */}
           <div className="space-y-4">
             <p className="text-slate-400 text-sm leading-relaxed">
-              Open to research collaborations, consulting on AI and data science projects, or just a conversation about LLMs and software engineering.
+              Open to research collaborations, AI engineering projects, and conversations about LLMs, software engineering, and open-source communities.
             </p>
             <p className="text-slate-400 text-sm leading-relaxed">
               Fill in the form and I will get back to you as soon as possible.

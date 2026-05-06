@@ -2,13 +2,13 @@
 
 import { useEffect, useState } from "react";
 
-const roles = ["AI Engineer", "Data Scientist", "LLM Engineer", "ML Practitioner", "AI Researcher"];
+const roles = ["Research Engineer", "AI Engineer", "LLM Systems", "Empirical SE", "Open Source"];
 
 const stats = [
-  { value: "4+", label: "years in AI & data" },
-  { value: "6", label: "tools built & deployed" },
-  { value: "10M+", label: "rows of data analyzed" },
-  { value: "5", label: "top conferences" },
+  { value: "AI", label: "engineering focus" },
+  { value: "LLMs", label: "systems & evaluation" },
+  { value: "OSS", label: "community research" },
+  { value: "SE", label: "empirical methods" },
 ];
 
 const heroStyle = `
@@ -56,8 +56,10 @@ export default function Hero() {
     } else if (deleting && displayed.length > 0) {
       timeout = setTimeout(() => setDisplayed(displayed.slice(0, -1)), 45);
     } else if (deleting && displayed.length === 0) {
-      setDeleting(false);
-      setRoleIndex((i) => (i + 1) % roles.length);
+      timeout = setTimeout(() => {
+        setDeleting(false);
+        setRoleIndex((i) => (i + 1) % roles.length);
+      }, 45);
     }
     return () => clearTimeout(timeout);
   }, [displayed, deleting, roleIndex]);
@@ -90,7 +92,7 @@ export default function Hero() {
             </span>
           </div>
           <p className="text-slate-400 text-sm leading-relaxed mb-8 max-w-sm">
-            AI Engineer and researcher at UOC. Building LLM-powered systems, running empirical studies, and publishing results at top software engineering venues.
+            Research Engineer building LLM-powered systems and empirical software engineering studies around automation, responsible AI, and open-source communities.
           </p>
 
           <div className="flex gap-3 flex-wrap mb-8">
@@ -122,20 +124,20 @@ export default function Hero() {
 
             <div className="p-5 font-mono text-sm space-y-3">
               <div>
-                <span className="text-green-400">sergio@uoc</span>
+                <span className="text-green-400">sergio@ai</span>
                 <span className="text-slate-600">:</span>
                 <span className="text-blue-400">~</span>
                 <span className="text-white ml-2">whoami</span>
               </div>
               <div className="text-slate-400 space-y-1 pl-2 border-l border-white/5">
                 <p><span className="text-blue-400">name</span>     Sergio Cobos</p>
-                <p><span className="text-blue-400">role</span>     AI Engineer · UOC</p>
-                <p><span className="text-blue-400">focus</span>    LLMs · ML · NLP · Automation</p>
+                <p><span className="text-blue-400">role</span>     Research Engineer</p>
+                <p><span className="text-blue-400">focus</span>    LLMs · SE · OSS · Automation</p>
                 <p><span className="text-blue-400">location</span> Barcelona, Spain</p>
               </div>
 
               <div className="pt-1">
-                <span className="text-green-400">sergio@uoc</span>
+                <span className="text-green-400">sergio@ai</span>
                 <span className="text-slate-600">:</span>
                 <span className="text-blue-400">~</span>
                 <span className="text-white ml-2">stats --research</span>
@@ -155,7 +157,7 @@ export default function Hero() {
               </div>
 
               <div className="flex items-center pt-1">
-                <span className="text-green-400">sergio@uoc</span>
+                <span className="text-green-400">sergio@ai</span>
                 <span className="text-slate-600">:</span>
                 <span className="text-blue-400">~</span>
                 <span className="ml-2 w-2 h-4 bg-blue-400 inline-block animate-pulse" />

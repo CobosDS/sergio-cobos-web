@@ -3,8 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 
 const publications = [
-  { title: "Monitoring LLM-Based Decision Components: Stability and Substitutability", venue: "ESEM 2026", type: "Conference", url: null },
-  { title: "Recommending GenAI Models for AI-Based Software Development", venue: "CAIN 2026", type: "Conference", url: null },
   { title: "A Comparison Between Social Coding and Citizen Participation Platforms: The Decidim Case", venue: "JSS 2026", type: "Journal", url: "https://zenodo.org/records/15704471" },
   { title: "Classifying Ethical Quality in OSS Contributions Using LLMs", venue: "AIES 2025", type: "Conference", url: "https://ojs.aaai.org/index.php/AIES/article/view/36578" },
   { title: "EthOSS: A Tool for Ethical Monitoring of OSS Communities", venue: "JISBD 2025", type: "Demo", url: null },
