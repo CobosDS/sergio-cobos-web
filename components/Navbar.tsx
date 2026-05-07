@@ -6,6 +6,7 @@ const links = [
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
+  { label: "Agentic Workflows", href: "#agentic-workflows" },
   { label: "Publications", href: "#publications" },
   { label: "Contact", href: "#contact" },
 ];
