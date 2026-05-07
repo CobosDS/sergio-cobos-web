@@ -1,5 +1,6 @@
 const skills = [
   "Python", "NLP", "ML", "LLMs", "Data Analysis",
+  "Agentic Workflows", "LLM Agents", "Automation",
   "Prompt Engineering", "LangChain", "Hugging Face",
   "RAG", "Statistics", "scikit-learn", "PyTorch",
   "SQL", "Docker", "Git", "LaTeX",
@@ -24,6 +25,9 @@ export default function About() {
             </p>
             <p>
               Before research I spent two years as a <span className="text-white font-medium">Data Scientist in industry</span>, working on segmentation models, ETL pipelines and data infrastructure. Before that I ran my own academy for several years, teaching Mathematics and Physics and managing a small team.
+            </p>
+            <p>
+              I also build agentic workflows for practical research and engineering tasks, combining LLMs, automation, documentation systems, and human-in-the-loop review.
             </p>
             <p>
               I care about building AI systems that are not just accurate but <span className="text-blue-400">interpretable, measurable and responsible</span>.
