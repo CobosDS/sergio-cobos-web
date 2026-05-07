@@ -16,10 +16,6 @@ const heroStyle = `
     0%   { transform: translateY(0); }
     100% { transform: translateY(40px); }
   }
-  @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50%       { transform: translateY(-10px); }
-  }
   @keyframes statIn {
     from { opacity: 0; transform: translateX(16px); }
     to   { opacity: 1; transform: translateX(0); }
@@ -31,7 +27,6 @@ const heroStyle = `
     background-size: 40px 40px;
     animation: gridMove 6s linear infinite;
   }
-  .float { animation: float 4s ease-in-out infinite; }
   .stat-in { animation: statIn 0.5s ease forwards; }
 `;
 
@@ -112,8 +107,8 @@ export default function Hero() {
 
         </div>
 
-        {/* Right: floating terminal card */}
-        <div className="float hidden md:block">
+        {/* Right: static terminal card */}
+        <div className="hidden md:block">
           <div className="rounded-2xl border border-white/10 bg-[#0d1117] shadow-2xl shadow-blue-950/40 overflow-hidden">
             <div className="flex items-center gap-2 px-4 py-3 border-b border-white/5 bg-white/[0.02]">
               <span className="w-3 h-3 rounded-full bg-red-500/70" />
