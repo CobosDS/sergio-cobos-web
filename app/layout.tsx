@@ -4,7 +4,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sergio-cobos.vercel.app"),
+  metadataBase: new URL("https://sergio-cobos-web.vercel.app"),
   title: "Sergio Cobos | Research Engineer",
   description:
     "Research Engineer working at the intersection of AI Engineering, LLMs, empirical Software Engineering, and open-source communities.",
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "Sergio Cobos | Research Engineer",
     description:
       "AI Engineering, LLMs, empirical Software Engineering, and open-source community research.",
-    url: "https://sergio-cobos.vercel.app",
+    url: "https://sergio-cobos-web.vercel.app",
     siteName: "Sergio Cobos",
     images: [
       {

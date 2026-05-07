@@ -31,7 +31,7 @@ npm run build
 Designed for Vercel. The social metadata currently assumes:
 
 ```txt
-https://sergio-cobos.vercel.app
+https://sergio-cobos-web.vercel.app/
 ```
 
 If the Vercel project name or custom domain changes, update `metadataBase`, `openGraph.url`, and related metadata in `app/layout.tsx`.
