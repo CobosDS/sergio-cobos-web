@@ -3,7 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 
 const publications = [
-  { title: "A Comparison Between Social Coding and Citizen Participation Platforms: The Decidim Case", venue: "JSS 2026", type: "Journal", url: "https://zenodo.org/records/15704471" },
+  { title: "Recommending GenAI Models for AI-Based Software Development", venue: "CAIN 2026", type: "Conference", url: null },
+  { title: "Monitoring LLM-Based Decision Components: Stability and Substitutability", venue: "ESEM 2026", type: "Submitted", url: null },
+  { title: "A Comparison Between Social Coding and Citizen Participation Platforms: The Decidim Case", venue: "JSS 2026", type: "Submitted", url: "https://zenodo.org/records/15704471" },
   { title: "Classifying Ethical Quality in OSS Contributions Using LLMs", venue: "AIES 2025", type: "Conference", url: "https://ojs.aaai.org/index.php/AIES/article/view/36578" },
   { title: "EthOSS: A Tool for Ethical Monitoring of OSS Communities", venue: "JISBD 2025", type: "Demo", url: null },
   { title: "The Software Diversity Card: A Framework for Reporting Diversity in Software Projects", venue: "IST 2025", type: "Journal", url: "https://www.sciencedirect.com/science/article/abs/pii/S0950584925002897" },
@@ -14,6 +16,7 @@ const typeStyle: Record<string, { badge: string; dot: string }> = {
   Conference: { badge: "text-blue-400 border-blue-500/30 bg-blue-500/10", dot: "bg-blue-500" },
   Journal:    { badge: "text-violet-400 border-violet-500/30 bg-violet-500/10", dot: "bg-violet-500" },
   Demo:       { badge: "text-emerald-400 border-emerald-500/30 bg-emerald-500/10", dot: "bg-emerald-500" },
+  Submitted:  { badge: "text-amber-400 border-amber-500/30 bg-amber-500/10", dot: "bg-amber-500" },
 };
 
 const pubStyle = `

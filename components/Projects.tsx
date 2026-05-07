@@ -24,7 +24,7 @@ const projects: Project[] = [
       "Directly addresses a real production risk that teams face when updating or replacing AI components to reduce costs",
     ],
     tech: ["Python", "NLP", "ML", "LLMs", "Statistics", "Data Analysis", "Statistical Testing", "Cohen's κ", "MLOps"],
-    publication: "Research project",
+    publication: "Submitted work",
   },
   {
     name: "GenAI Recommender",
@@ -37,7 +37,7 @@ const projects: Project[] = [
       "Targets software developers without deep AI expertise who need to integrate models into production products",
     ],
     tech: ["Python", "NLP", "ML", "LLMs", "Statistics", "Data Analysis", "Software Product Lines", "Hugging Face"],
-    publication: "Submitted work",
+    publication: "CAIN 2026",
   },
   {
     name: "Decidim Study",
@@ -47,10 +47,10 @@ const projects: Project[] = [
       "Discovered that on GitHub just 10 users generate 88% of all comments, revealing extreme concentration of activity",
       "Found that Decidim Barcelona has the widest reach with 1,967 threads but the shallowest discussions per thread",
       "Combined quantitative Social Network Analysis with qualitative interviews to explain the numbers behind the patterns",
-      "Published in the Journal of Systems and Software, a top-tier journal in empirical software engineering",
+      "Submitted to the Journal of Systems and Software, a top-tier journal in empirical software engineering",
     ],
     tech: ["Python", "NLP", "ML", "LLMs", "Statistics", "Data Analysis", "Social Network Analysis", "GitHub API"],
-    publication: "JSS 2026",
+    publication: "Submitted work",
     pubUrl: "https://zenodo.org/records/15704471",
   },
   {
